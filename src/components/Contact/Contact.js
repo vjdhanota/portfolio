@@ -1,0 +1,68 @@
+import React from "react";
+import styled from "styled-components";
+import { media } from "../style-utils.js";
+import { MainText } from "../Shared";
+
+const Contact = props => {
+  const ContactInput = styled.input`
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  `;
+  const ContactInputSubmit = styled.input`
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #dce9fb;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    &:hover {
+      background: #dce9fb;
+      cursor: pointer;
+    }
+  `;
+  const ContactTextArea = styled.textarea`
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+  `;
+
+  const ContactContainer = styled.div`
+    display: flex;
+    justify-content: center;
+  `;
+  return (
+    <div>
+      <MainText>Contact Me</MainText>
+      <br />
+      <ContactContainer>
+        <form
+          style={{ width: "50%" }}
+          action="https://formspree.io/dhanota.vijay@gmail.com"
+          method="POST"
+        >
+          <label for="name">Name</label>
+          <ContactInput type="text" name="name" />
+          <label for="_replyto">Email</label>
+          <ContactInput type="email" name="_replyto" />
+          <label for="message">Message</label>
+          <ContactTextArea rows="8" type="message" name="message" />
+          <ContactInputSubmit type="submit" value="Send" />
+        </form>
+      </ContactContainer>
+    </div>
+  );
+};
+
+export default Contact;
