@@ -26,10 +26,10 @@ class App extends Component {
         <Container>
           <Header active={this.state.activeNavLink} />
 
+          <Route exact path="/" component={Home} />
           <Route path="/work" component={Home} />
           <Route exact={true} path="/about" component={About} />
           <Route exact={true} path="/contact" component={Contact} />
-          <Footer/>
         </Container>
       </Router>
     );

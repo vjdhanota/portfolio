@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../logo2.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import { media } from "../style-utils.js";
 
 const NavbarContainer = styled.div`
@@ -40,13 +40,16 @@ const NavbarLink = styled(NavLink)`
 `;
 
 const NavbarLogo = styled.img`
+  float: left;
+  display: block;
   ${media.tablet``}
 `;
 const navLinks = ["work", "about", "contact"];
 const renderNavLink = linkName => {
+  
   return (
-      <NavbarItem key={linkName}>
-     <NavbarLink exact activeStyle={{ color: "#333" }} to={`/${linkName}`}>
+    <NavbarItem key={linkName}>
+     <NavbarLink activeStyle={{ color: "#333" }} to={`/${linkName}`}>
         {linkName.charAt(0).toUpperCase() + linkName.substr(1)}
       </NavbarLink>
     </NavbarItem>
@@ -56,7 +59,9 @@ const renderNavLink = linkName => {
 const Header = props => {
   return (
     <NavbarContainer>
-      <NavbarLogo src={logo} width="75px" height="75px" alt="logo" />
+      <Route render={({history}) => (
+        <NavbarLogo src={logo} width="75px" height="75px" alt="logo" onClick={() => history.push('/')} />
+      )}/>
       <Navbar>
         {navLinks.map(linkName => renderNavLink(linkName))}
       </Navbar>
