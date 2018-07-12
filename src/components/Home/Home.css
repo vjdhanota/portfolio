@@ -1,0 +1,10 @@
+.portfolio-image:hover + .portfolio-image-description {
+  visibility: visible;
+  -webkit-transition: visibility 200ms ease-in 200ms;
+  -moz-transition: visibility 200ms ease-in 200ms;
+  transition: visibility 200ms ease-in 200ms;
+}
+
+.portfolio-image-description span:last-child:after {
+  content: "";
+}

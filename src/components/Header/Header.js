@@ -8,8 +8,8 @@ const NavbarContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 55px 0 55px;
-  ${media.tablet`padding: 45px 0 60px;`}
+  padding: 45px 0 60px;
+  ${media.tablet`padding: 55px 0 55px;`}
 `;
 const Navbar = styled.ul`
   list-style-type: none;
@@ -18,8 +18,10 @@ const Navbar = styled.ul`
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
-  ${media.tablet`flex-direction: column; padding-left: calc(100vw - 80%);`}
-  ${media.phone`padding-left: 30%;`}
+  flex-direction: column; 
+  padding-left: calc(100vw - 80%);
+  ${media.tablet`padding-left: 20%; flex-direction: row;`}
+  ${media.desktop`padding-left: 0;`}
 `;
 
 const NavbarItem = styled.li`
@@ -42,7 +44,6 @@ const NavbarLink = styled(NavLink)`
 const NavbarLogo = styled.img`
   float: left;
   display: block;
-  ${media.tablet``}
 `;
 const navLinks = ["work", "about", "contact"];
 const renderNavLink = linkName => {

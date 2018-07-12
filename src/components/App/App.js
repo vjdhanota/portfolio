@@ -9,6 +9,7 @@ import Footer from '../Footer/Footer';
 import { BrowserRouter as Router, Route} from "react-router-dom";
 const Container = styled.div`
   width: 85%;
+  max-width: 950px;
   margin: 0 auto;
 `;
 
