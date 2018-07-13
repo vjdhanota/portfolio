@@ -48,7 +48,7 @@ const Contact = props => {
       <br />
       <ContactContainer>
         <form
-          style={{ width: "50%" }}
+          style={{ width: "70%" }}
           action="https://formspree.io/dhanota.vijay@gmail.com"
           method="POST"
         >

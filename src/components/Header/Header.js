@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../../logo2.png";
+import logo from "../../logo-name.png";
 import { NavLink, Route } from "react-router-dom";
 import { media } from "../style-utils.js";
 
@@ -13,14 +13,11 @@ const NavbarContainer = styled.div`
 `;
 const Navbar = styled.ul`
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
   flex-direction: column; 
-  padding-left: calc(100vw - 80%);
-  ${media.tablet`padding-left: 20%; flex-direction: row;`}
+  ${media.tablet`flex-direction: row;`}
   ${media.desktop`padding-left: 0;`}
 `;
 
@@ -28,6 +25,7 @@ const NavbarItem = styled.li`
   display: block;
   width: 60px;
   margin-left: 45px;
+  align-self: flex-end;
 `;
 
 const NavbarLink = styled(NavLink)`
@@ -42,8 +40,10 @@ const NavbarLink = styled(NavLink)`
 `;
 
 const NavbarLogo = styled.img`
-  float: left;
   display: block;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const navLinks = ["work", "about", "contact"];
 const renderNavLink = linkName => {
@@ -61,7 +61,7 @@ const Header = props => {
   return (
     <NavbarContainer>
       <Route render={({history}) => (
-        <NavbarLogo src={logo} width="75px" height="75px" alt="logo" onClick={() => history.push('/')} />
+        <NavbarLogo src={logo} width="75px" height="75px" alt="logo" onClick={() => history.push('/work')} />
       )}/>
       <Navbar>
         {navLinks.map(linkName => renderNavLink(linkName))}
