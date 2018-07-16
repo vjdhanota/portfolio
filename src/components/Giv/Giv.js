@@ -10,7 +10,7 @@ import SideMenu from '../../images/giv/side_menu.png';
 
 const Giv = props => {
   return (
-    <div>
+    <div >
       <Carousel dynamicHeight={true} infiniteLoop={true}>
         <div>
           <img src={Login}/>

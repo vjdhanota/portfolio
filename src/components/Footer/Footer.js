@@ -19,8 +19,8 @@ const SocialMediaLink = styled.a`
 const Footer = () => {
   return(
     <FooterContainer>
-      <SocialMediaLink href="https://www.linkedin.com/in/vijay-dhanota-717987138/"><i class="fa fa-linkedin"></i></SocialMediaLink>
-      <SocialMediaLink href="http://www.github.com/vjdhanota"><i class="fa fa-github"></i></SocialMediaLink>
+      <SocialMediaLink href="https://www.linkedin.com/in/vijay-dhanota-717987138/"><i className="fa fa-linkedin"></i></SocialMediaLink>
+      <SocialMediaLink href="https://www.github.com/vjdhanota"><i className="fa fa-github"></i></SocialMediaLink>
     </FooterContainer>
 
   )

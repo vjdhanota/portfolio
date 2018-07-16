@@ -11,7 +11,7 @@ import Worldly from '../Worldly/Worldly';
 import Giv from '../Giv/Giv';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 const Container = styled.div`
-  width: 85%;
+  width: 92%;
   max-width: 950px;
   margin: 0 auto;
 `;

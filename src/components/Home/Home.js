@@ -22,7 +22,7 @@ const Home = props => {
       <PortfolioList>
         <PortfolioItemLeft>
           <Route render={({history}) => (
-            <PortfolioImage onClick={()=>history.push('/worldly')}  margin="15px" className="portfolio-image">
+            <PortfolioImage onClick={()=> history.push('/worldly')}  margin="75px" marginMobile="25px" className="portfolio-image">
               <Image src={WorldlyPreview} />
             </PortfolioImage>
           )}/>
@@ -41,7 +41,9 @@ const Home = props => {
             </PortfolioImageDescriptionContainer>
           <PortfolioBackground color="#dce9fb" />
           <PortfolioContent>
-            <ProjectName href="/worldly">Worldly <span ><i class="fa fa-angle-right"></i></span></ProjectName>
+          <Route render={({history}) => (
+            <ProjectName onClick={()=>history.push('/worldly')}>Worldly <span ><i className="fa fa-angle-right"></i></span></ProjectName>
+          )}/>
             <ProjectDescription>
               Global learning platform which helps teachers to better educate
               their students on global events. Features an assignment system,
@@ -53,7 +55,9 @@ const Home = props => {
 
         <PortfolioItemRight>
           <PortfolioContent>
-            <ProjectName href="/giv">Giv  <span ><i class="fa fa-angle-right"></i></span></ProjectName>
+          <Route render={({history}) => (
+            <ProjectName onClick={()=>history.push('/giv')}>Giv  <span ><i className="fa fa-angle-right"></i></span></ProjectName>
+          )}/>
             <ProjectDescription>
               Mobile application (Android & iOS via React Native) to help people
               find and subscribe to reputable charities that suit their
@@ -61,8 +65,8 @@ const Home = props => {
             </ProjectDescription>
           </PortfolioContent>
           <Route render={({history}) => (
-          <PortfolioImage onClick={()=>history.push('/giv')} margin="150px" left="51%" className="portfolio-image">
-            <Image src={GivPreview} />
+          <PortfolioImage onClick={()=>history.push('/giv')} marginMobile="245px" margin="75px" left="51%" className="portfolio-image">
+            <Image src={GivPreview}  />
           </PortfolioImage>
           )}/>
           <PortfolioImageDescriptionContainer
@@ -84,7 +88,7 @@ const Home = props => {
         </PortfolioItemRight>
 
         <PortfolioItemLeft>
-          <PortfolioImage margin="250px" className="portfolio-image">
+          <PortfolioImage className="portfolio-image" marginMobile="260px" margin="75px">
             <Image src={PortfolioPreview} />
           </PortfolioImage>
           <PortfolioImageDescriptionContainer className="portfolio-image-description">
@@ -101,7 +105,9 @@ const Home = props => {
           </PortfolioImageDescriptionContainer>
           <PortfolioBackground color="#e6deff"  />
           <PortfolioContent>
-            <ProjectName href="/work">Portfolio  <span ><i class="fa fa-angle-right"></i></span></ProjectName>
+          <Route render={({history}) => (
+            <ProjectName onClick={()=>history.push('/work')}>Portfolio  <span ><i className="fa fa-angle-right"></i></span></ProjectName>
+          )}/>
             <ProjectDescription>
               This website was created using React without the help of a CSS
               framework. It is fully responsive and looks great on any screen
@@ -112,15 +118,15 @@ const Home = props => {
 
         <PortfolioItemRight>
           <PortfolioContent>
-            <ProjectName href="https://www.youtube.com/watch?v=bWJCihilgOo">Don't Look Down!  <span ><i class="fa fa-angle-right"></i></span></ProjectName>
+            <ProjectName href="https://www.youtube.com/watch?v=bWJCihilgOo">Don't Look Down!  <span ><i className="fa fa-angle-right"></i></span></ProjectName>
             <ProjectDescription>
               Virtual Reality platforming game where the goal is to ascend
               platforms and avoid enemies. Features procedurally genererated
               platforms and enemies with ever increasing difficulty.
             </ProjectDescription>
           </PortfolioContent>
-          <PortfolioImage margin="175px" left="51%" className="portfolio-image">
-            <Image src={DLDPreview} />
+          <PortfolioImage left="51%" marginMobile="270px" margin="75px" className="portfolio-image">
+            <Image src={DLDPreview}  />
           </PortfolioImage>
           <PortfolioImageDescriptionContainer
             left="50%"
@@ -160,7 +166,7 @@ const PortfolioList = styled.div`
 const PortfolioItem = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   flex-direction: column-reverse;
   position: relative;
   overflow: hidden;
@@ -190,6 +196,7 @@ const ProjectName = styled.a`
   ${media.tablet`
     &:hover {
       color: #333;
+      cursor: pointer;
     }
 
     &:before {
@@ -220,27 +227,27 @@ const ProjectDescription = styled.p`
   font-weight: 100;
 `;
 const PortfolioBackground = styled.div`
-  flex: 1;
   background: ${props => props.color};
   width: 100%;
   height: 275px;
   ${media.tablet`
-  height: 300px;
-  width: 50%;
+    flex: 1;
+    height: 300px;
+    width: 50%;
 `};
 `;
 
 const PortfolioImage = styled.div`
   position: absolute;
   width: 100%;
-  display: block;
   overflow: hidden;
   z-index: 100;
-  margin-top: ${props => props.margin};
+  margin-top: ${props => props.marginMobile};
   ${media.tablet`
     left: ${props => props.left};
     width: 50%;
-    margin-top: 0;
+    margin-top: ${props => props.margin};
+    top: 0;
     -webkit-transition: filter 300ms ease-in 50ms;
     -moz-transition: filter 300ms ease-in 50ms;
     transition: filter 300ms ease-in 50ms;
@@ -252,19 +259,21 @@ const PortfolioImage = styled.div`
 `;
 
 const Image = styled.img`
-display: block;
-margin: 0 auto;
-margin-top: 65px;
-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 35px 0 rgba(0, 0, 0, 0.15);
-width: 250px
-border-radius: 7px;
-${media.tablet`
-  width: 240px;
-`};
-${media.desktop`
-  width: 255px;
-`};
+  display: block;
+  margin: 0 auto;
+  margin-top: ${props => props.margin} 
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 35px 0 rgba(0, 0, 0, 0.15);
+  width: 250px
+  border-radius: 7px;
+  ${media.tablet`
+    width: 240px;
+  `};
+  ${media.desktop`
+    width: 255px;
+  `};
 `;
+
+
 
 const PortfolioImageDescriptionContainer = styled.div`
   position: absolute;

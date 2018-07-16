@@ -9,7 +9,7 @@ const Contact = props => {
     padding: 12px 20px;
     margin: 8px 0;
     display: block;
-    border: 2px solid ${props => props.borderColor};
+    border: 1px solid #999;
     border-radius: 4px;
     box-sizing: border-box;
     &:focus {
@@ -21,7 +21,7 @@ const Contact = props => {
     padding: 12px 20px;
     margin: 8px 0;
     display: block;
-    border: 2px solid #dce9fb;
+    border: 1px solid #999;
     border-radius: 4px;
     box-sizing: border-box;
     transition: 0.3s;
@@ -35,7 +35,7 @@ const Contact = props => {
     margin: 8px 0;
     display: block;
     width: 100%;
-    border: 2px solid #ffdfdf;
+    border: 1px solid #999;
     border-radius: 4px;
     resize: vertical;
     box-sizing: border-box;
@@ -60,9 +60,9 @@ const Contact = props => {
           method="POST"
         >
           <label for="name">Name</label>
-          <ContactInput type="text" name="name" borderColor="#e1f7d5" />
+          <ContactInput type="text" name="name" />
           <label for="_replyto">Email</label>
-          <ContactInput type="email" name="_replyto" borderColor="#e6deff" />
+          <ContactInput type="email" name="_replyto"  />
           <label for="message">Message</label>
           <ContactTextArea rows="8" type="message" name="message" />
           <ContactInputSubmit type="submit" value="Send" />

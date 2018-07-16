@@ -18,26 +18,40 @@ class About extends Component {
  
   render() {
     const { pageNumber } = this.state;
- 
     return (
       <div>
         <MainText>Resume</MainText>
-        <ResumeContainer>
+        <ResumeWarning>Under construction for mobile...</ResumeWarning>
+        <ResumeWarning>Here's a  <a href="https://drive.google.com/file/d/18mTxzUjxm_8RcG5Ro7uvuqBDKFDe0XZy/view?usp=sharing">link</a> to the resume instead</ResumeWarning>
+        {window.innerWidth > 647 && <ResumeContainer>
           <Document
             file={Resume}
             onLoadSuccess={this.onDocumentLoad}
           >
             <Page pageNumber={pageNumber} />
           </Document>
-        </ResumeContainer>
+        </ResumeContainer> }
+        
       </div>
     );
   }
 }
 
 const ResumeContainer = styled.div`
-  display: flex;
-  justify-content: center;
+
+  display: none;
+  visibility: hidden;
+  ${media.tablet`
+    display:flex;
+    justify-content: center;
+    visibility: visible;
+  `}
+`
+
+const ResumeWarning = styled.p`
+  ${media.tablet`
+    visibility: hidden;
+  `}
 `
 
 export default About;
