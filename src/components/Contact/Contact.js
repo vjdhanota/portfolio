@@ -41,6 +41,7 @@ const Contact = props => {
   const ContactContainer = styled.div`
     display: flex;
     justify-content: center;
+    margin-bottom: 3rem;
   `;
   return (
     <div>

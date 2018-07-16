@@ -8,3 +8,10 @@
 .portfolio-image-description span:last-child:after {
   content: "";
 }
+.fa-angle-right {
+  color: #333;
+  font-size: .9rem;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  vertical-align: middle;
+}

@@ -3,10 +3,26 @@ import styled from "styled-components";
 import { media } from "../style-utils.js";
 
 const FooterContainer = styled.div`
-  position: sticky;
-  background-color: grey;
+  /* position: sticky; */
+  height: 50px;
+`
+const SocialMediaLink = styled.a`
+  color:#333;
+  margin: .5rem;
+  font-size: 2rem;
+  &:hover {
+    cursor: pointer;
+    color: #888;
+  }
 `
 
-const Footer = props => <FooterContainer><h1>hello</h1></FooterContainer>
+const Footer = () => {
+  return(
+    <FooterContainer>
+      <SocialMediaLink href="https://www.linkedin.com/in/vijay-dhanota-717987138/"><i class="fa fa-linkedin"></i></SocialMediaLink>
+      <SocialMediaLink href="http://www.github.com/vjdhanota"><i class="fa fa-github"></i></SocialMediaLink>
+    </FooterContainer>
 
+  )
+}
 export default Footer;
