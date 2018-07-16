@@ -61,7 +61,7 @@ const Home = props => {
             </ProjectDescription>
           </PortfolioContent>
           <Route render={({history}) => (
-          <PortfolioImage onClick={()=>history.push('/giv')} margin="175px" left="50%" className="portfolio-image">
+          <PortfolioImage onClick={()=>history.push('/giv')} margin="150px" left="51%" className="portfolio-image">
             <Image src={GivPreview} />
           </PortfolioImage>
           )}/>
@@ -84,7 +84,7 @@ const Home = props => {
         </PortfolioItemRight>
 
         <PortfolioItemLeft>
-          <PortfolioImage margin="150px" className="portfolio-image">
+          <PortfolioImage margin="250px" className="portfolio-image">
             <Image src={PortfolioPreview} />
           </PortfolioImage>
           <PortfolioImageDescriptionContainer className="portfolio-image-description">
@@ -119,7 +119,7 @@ const Home = props => {
               platforms and enemies with ever increasing difficulty.
             </ProjectDescription>
           </PortfolioContent>
-          <PortfolioImage margin="230px" left="50%" className="portfolio-image">
+          <PortfolioImage margin="175px" left="51%" className="portfolio-image">
             <Image src={DLDPreview} />
           </PortfolioImage>
           <PortfolioImageDescriptionContainer
